@@ -1,0 +1,32 @@
+# The upstream code is tracked as a pinned Git submodule.
+
+# Local-only data and run artifacts.
+/data/*
+!/data/.gitkeep
+/runs/*
+!/runs/.gitkeep
+/checkpoints/
+/models/
+/.cache/
+
+# Credentials and machine-specific configuration.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+env_vars.local.*
+
+# Environments, Python caches and OS files.
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+
+# Model artifacts must not be included by an accidental add.
+*.safetensors
+*.ckpt
+*.pt
+*.pth

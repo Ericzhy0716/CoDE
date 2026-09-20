@@ -1,0 +1,43 @@
+{
+  "project": "codestop-reproduction",
+  "created_on": "2026-09-20",
+  "paper": "https://arxiv.org/abs/2604.04930v2",
+  "upstream_repository": "https://github.com/sudoparsa/CoDE-Stop.git",
+  "upstream_commit": "b5081e7c2abe23bb1d19649421cc13522fee7c50",
+  "upstream_path": "upstream/CoDE-Stop",
+  "upstream_worktree_clean": true,
+  "upstream_tracked_files_sha256": {
+    ".gitignore": "8e4d9f107cb5c59d0806787b5d3b4500b7002c9f8b5242802c4782a713f3e6bf",
+    "LICENSE": "2e244c45435b1f6ab0342e7ce519775afc1b849fc8c1dea4c16de7c231705f9e",
+    "README.md": "461bd8628822b21df1416bc634a49ccd63ce6e6cbdff885e544f33c40a25a71e",
+    "basic_results.py": "43428f2a67307c9c2f7120a326d42e493a67f905649136a6acb0fc1bb5b87bc2",
+    "cache_utils.py": "e4bcea4a8c9bb5f76a4e2cacf7070c4c302de4272645d974e1de008636f73d04",
+    "compact.py": "f089a3c2bf65db5c25492b6cd10033edf0987a6ed0a866b4786dda790d2e0ac2",
+    "dataset_loader.py": "2b301d3813c06ed73782f4bb7509e44c125ec4aa8dbcfc0b05a8bcb172ac2713",
+    "env_vars.py": "4b9baeca240908c970d233344acdb8db11f439f64c6e8c30d134387e33224d8f",
+    "env_vars.sh": "c756e34e5128ef44e86b9cc4cd6afe821005e11872b2548e442be1eab284fac5",
+    "inference.py": "65b23de0ffab41b1de26d27c2907a8129d30d72aef88faf5a1847a110f372ee1",
+    "inference.sh": "77a8de2e870ab181b779d59aa3463de0b68274f4437734c05cc812aeec5800e6",
+    "llm_eval.py": "22225a6a01499e13c9422c357e72ee2df37cd4c8f84197ebfa959e29622278dc",
+    "method_ansconv_consistency.py": "b1a67936182ee2f831de4b42c650e200012aafb46a170e26f2f84086a798bda9",
+    "method_codestop.py": "d020fde481bf1ad2d4ee53ea43a3ae31560e05be1d6cf6f172489b54179cb1ff",
+    "method_deer.py": "340da5ad17b1be4e97e299ec37e84c711d6ada13fa6b28c018e48d4561a08145",
+    "method_eat.py": "9c9d0dda51a7594403d7866279ab8e3d46b4cc85bb309bb1b9b39d7828d53907",
+    "method_prompts.py": "e94de1253160725c2e277a80ec8f4909879bad76c40d3d1a5783e297ccbf4d13",
+    "method_think_or_not.py": "848bdc5b91528cc705d5d25b1e4124d7e2eb7ba96c841fd2e922df1a2d1fdfcb",
+    "method_wheels.py": "939cc8b0b4bf76e50ff73b7343a9db4b1f647ed3bcde0dfec15523007ec5a3b7",
+    "models.py": "0db56d78541ccc913410f07c5d96466dcf05e4840bafc0d0d9e7aabe79ad90e5",
+    "requirements.txt": "ad38d1f0700aa1c95bccfd95dbde294da34af3c87e5f4821cd811198d788c355"
+  },
+  "initial_document_copies_sha256": {
+    "CODESTOP_REPRODUCTION_REQUIREMENTS_20260920.md": "3389f0e40291f4d1cd33351756362f8256c0cdec856722f91609fd356beb0925",
+    "CODESTOP_NOVELTY_ASSESSMENT_20260920.md": "2a9dff5f2f049e9b391d3c3508c09a239e9b4bd7cbd232e7e10d907a3c1cd870"
+  },
+  "historical_source": "../iclr2027-efficient-reasoning",
+  "gpu_experiments_started": false,
+  "remote_repository_configured_for_this_project": true,
+  "project_repository": "https://github.com/Ericzhy0716/CoDE",
+  "project_default_branch": "main",
+  "upstream_tracking": "git-submodule",
+  "initial_document_copies_sha256_note": "Hashes record the original local copies before repository integration; later document edits are tracked by Git."
+}

@@ -1,0 +1,3 @@
+[submodule "upstream/CoDE-Stop"]
+	path = upstream/CoDE-Stop
+	url = https://github.com/sudoparsa/CoDE-Stop.git
