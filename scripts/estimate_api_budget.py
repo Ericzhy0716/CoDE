@@ -7,6 +7,7 @@ be supplied in CNY per million tokens; see docs/API_TOKEN_BUDGET_20260921.md.
 
 import argparse
 import json
+import math
 
 
 BASE_OUTPUT_TOKENS = {
@@ -51,13 +52,33 @@ def main():
     parser.add_argument("--checks", nargs="+", type=int, default=[5, 20, 100])
     parser.add_argument("--prompt-tokens", type=int, default=500)
     parser.add_argument("--prefix-fraction", type=float, default=0.5)
+    parser.add_argument("--gpu-hourly-prices", nargs="+", type=float,
+                        help="Optional CNY/hour rates for pure-cost break-even hours; not a memory/compatibility check.")
     args = parser.parse_args()
+    if not all(math.isfinite(v) for v in [args.input_price_cny,
+                                          args.output_price_cny,
+                                          args.prefix_fraction]):
+        parser.error("Prices and prefix fraction must be finite.")
     if min(args.input_price_cny, args.output_price_cny, args.prompt_tokens) < 0:
         parser.error("Prices and prompt length must be nonnegative.")
     if any(k < 0 for k in args.checks) or not 0 <= args.prefix_fraction <= 1:
         parser.error("Checks must be nonnegative; prefix fraction must be in [0, 1].")
+    if args.gpu_hourly_prices and any(not math.isfinite(p) or p <= 0
+                                     for p in args.gpu_hourly_prices):
+        parser.error("GPU hourly prices must be finite and positive.")
     n = TRAJECTORIES[args.scope]
     mean_length = BASE_OUTPUT_TOKENS[args.model][args.scope] / n
+    scenarios = [estimate(n, mean_length, k, args.input_price_cny,
+                          args.output_price_cny, args.prompt_tokens,
+                          args.prefix_fraction) for k in args.checks]
+    if args.gpu_hourly_prices:
+        for scenario in scenarios:
+            cost = (scenario["input_million_tokens"] * args.input_price_cny
+                    + scenario["output_million_tokens"] * args.output_price_cny)
+            scenario["gpu_break_even"] = [
+                {"hourly_price_cny": p, "billed_hours": round(cost / p, 3)}
+                for p in args.gpu_hourly_prices
+            ]
     print(json.dumps({
         "status": "planning_scenario_not_measured_or_compatibility_verified",
         "assumptions": vars(args),
@@ -65,9 +86,7 @@ def main():
         "base_output_million_tokens": n * mean_length / 1e6,
         "excluded": ["AMC calibration", "judging", "retries", "other ablations",
                      "payment fees", "electricity", "labor"],
-        "scenarios": [estimate(n, mean_length, k, args.input_price_cny,
-                               args.output_price_cny, args.prompt_tokens,
-                               args.prefix_fraction) for k in args.checks],
+        "scenarios": scenarios,
     }, ensure_ascii=False, indent=2))
 
 

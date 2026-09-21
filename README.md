@@ -24,6 +24,7 @@ codestop-reproduction/
 - [创新可行性与相关工作审查](docs/CODESTOP_NOVELTY_ASSESSMENT_20260920.md)：相邻工作、创新边界、阅读顺序及有限投入的去留流程。
 - [费用估算与 Mac/API 可行性](docs/COST_AND_API_FEASIBILITY_20260921.md)：单卡预算假设、API 必备能力、重复输入费用和后续验证安排；尚无测速或付费 API 实验。
 - [API 现价与分阶段预算](docs/API_TOKEN_BUDGET_20260921.md)：公开端点价格、FP8限制、双模型条件预算与可复算的离线工具。
+- [API 与低价 GPU 的费用比较](docs/API_VS_GPU_COST_20260921.md)：原模型显存估算、公开租价、同任务费用及租卡盈亏平衡时间；实际吞吐仍待测试。
 - [官方代码](https://github.com/sudoparsa/CoDE-Stop/tree/b5081e7c2abe23bb1d19649421cc13522fee7c50)：来源为`sudoparsa/CoDE-Stop`，固定提交`b5081e7c2abe23bb1d19649421cc13522fee7c50`，以Git子模块关联。该副本用于对照原始实现；我们的修改放在独立代码/补丁中，并注明与上游差异。原作者代码保留其MIT许可与版权声明。
 
 **当前状态**
