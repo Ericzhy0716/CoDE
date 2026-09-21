@@ -20,6 +20,7 @@ codestop-reproduction/
 
 **现有资料**
 
+- [预算汇总：租GPU与调用API](docs/BUDGET_SUMMARY_20260921.md)：统一实验范围、逐基准检查步数、校准/判分/存储预留；明确哪些是公开价格、哪些是未实测的预算情景。
 - [复现实验要求](docs/CODESTOP_REPRODUCTION_REQUIREMENTS_20260920.md)：模型、数据、依赖、参数、判分、代码差异及验收要求。
 - [创新可行性与相关工作审查](docs/CODESTOP_NOVELTY_ASSESSMENT_20260920.md)：相邻工作、创新边界、阅读顺序及有限投入的去留流程。
 - [费用估算与 Mac/API 可行性](docs/COST_AND_API_FEASIBILITY_20260921.md)：单卡预算假设、API 必备能力、重复输入费用和后续验证安排；尚无测速或付费 API 实验。
