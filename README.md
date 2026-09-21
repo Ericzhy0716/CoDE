@@ -20,6 +20,8 @@ codestop-reproduction/
 
 **现有资料**
 
+- [新手复现计划](docs/REPRODUCTION_PLAN.md)：每天6–8小时、10个任务阶段与弹性顺延规则；从单题理解到单模型完整基准。
+- [复现进度与每日汇报](docs/REPRODUCTION_PROGRESS.md)：当前阶段、已完成证据、下一次任务和调整记录；根据每日实际进度更新。
 - [实验优先级与最小证据](docs/EXPERIMENT_PRIORITIES_20260921.md)：当前必做、支持创新结论时再做、可推迟项目；先独立开发诊断，再决定完整复现和扩展。
 - [预算汇总：租GPU与调用API](docs/BUDGET_SUMMARY_20260921.md)：统一实验范围、逐基准检查步数、校准/判分/存储预留；明确哪些是公开价格、哪些是未实测的预算情景。
 - [复现实验要求](docs/CODESTOP_REPRODUCTION_REQUIREMENTS_20260920.md)：模型、数据、依赖、参数、判分、代码差异及验收要求。
