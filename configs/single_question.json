@@ -1,0 +1,23 @@
+{
+  "scope": "single_question_diagnostic_only",
+  "sample": {
+    "id": "teaching-001",
+    "question": "Compute 37 * 43 - 29 * 41.",
+    "answer": "402",
+    "purpose": "handwritten_diagnostic_not_benchmark"
+  },
+  "model_id": "Qwen/Qwen3-4B",
+  "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+  "max_new_tokens": 2048,
+  "seed": 42,
+  "deer_threshold": 0.95,
+  "conf_threshold": 0.95,
+  "degen_threshold": 2.0,
+  "ramp_steps": 2,
+  "ramp_min": 0.9,
+  "stop_word": "Wait",
+  "ewt": true,
+  "cp_cache": false,
+  "use_log": true,
+  "rollback": false
+}

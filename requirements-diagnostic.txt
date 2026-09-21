@@ -1,0 +1,7 @@
+# Install the CUDA-compatible torch build separately for the actual GPU.
+# This file checks/preserves the upstream versions; it does not select a CUDA wheel.
+torch==2.9.1
+transformers==4.51.3
+accelerate==1.12.0
+nltk==3.9.2
+# Exact resolved transitive versions are saved in each run's environment report.
