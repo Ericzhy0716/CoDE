@@ -20,7 +20,7 @@ codestop-reproduction/
 
 **现有资料**
 
-- [新对话交接文档](docs/REPRODUCTION_HANDOFF.md)：可单独上传，包含当前状态、十阶段计划、协作方式、已知问题及接手后的第一步。
+- [新对话交接文档](docs/REPRODUCTION_HANDOFF.md)：可单独上传，包含当前状态、十阶段计划、账号分工、Notion任务表与顺延方案、已知问题及接手后的第一步；Notion尚未实际接入。
 - [新手复现计划](docs/REPRODUCTION_PLAN.md)：每天6–8小时、10个任务阶段与弹性顺延规则；从单题理解到单模型完整基准。
 - [复现进度与每日汇报](docs/REPRODUCTION_PROGRESS.md)：当前阶段、已完成证据、下一次任务和调整记录；根据每日实际进度更新。
 - [实验优先级与最小证据](docs/EXPERIMENT_PRIORITIES_20260921.md)：当前必做、支持创新结论时再做、可推迟项目；先独立开发诊断，再决定完整复现和扩展。
