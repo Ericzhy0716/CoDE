@@ -39,6 +39,8 @@ git submodule status upstream/CoDE-Stop
 
 ## 3. 第一段：method_step_by_step()负责什么
 
+逐行中文注释见 [学习副本](../src/method_step_by_step_annotated.py)。每条注释标明原始行号，函数逻辑与固定上游一致；副本用于阅读，实验仍从正式入口执行。
+
 打开`method_prompts.py`第7行。先认识四个参数：
 
 | 参数 | 这里的含义 |
