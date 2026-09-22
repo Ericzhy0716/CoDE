@@ -20,6 +20,7 @@ codestop-reproduction/
 
 **现有资料**
 
+- [D1源码导读与练习](docs/D1_CODE_WALKTHROUGH.md)：在Mac上按题目、消息、token、生成、判分、保存的顺序精读；附实际行号、只读命令和笔记清单。
 - [单题执行指南](docs/SINGLE_QUESTION_RUNBOOK.md)：本地查看配置，服务器准备与检查，再逐阶段生成、补答、DEER/CoDE和教学判分；新增入口尚待真实GPU验收。
 - [新对话交接文档](docs/REPRODUCTION_HANDOFF.md)：可单独上传，包含当前状态、十阶段计划、账号分工、Notion任务表与顺延方案、已知问题及接手后的第一步；Notion连接已于2026-09-21核验，任务数据库尚未建立或迁移。
 - [新手复现计划](docs/REPRODUCTION_PLAN.md)：每天6–8小时、10个任务阶段与弹性顺延规则；从单题理解到单模型完整基准。
