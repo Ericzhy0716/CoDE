@@ -260,7 +260,7 @@ index 6e81b55b4c3921a7c856aa656e1d0d372091f87e..7c256614ebf6c40974034560d5901cb3
              # Progress logging
              samples_done = sample_idx - start_idx + 1
 diff --git a/method_deer.py b/method_deer.py
-index 15c7945f7aada5600ccbb957b0c8f8dad966e070..2c9005687eb601119b342f02aca67f733a57420e 100644
+index 15c7945f7aada5600ccbb957b0c8f8dad966e070..41b4065ec07bc08396f5eadb63be7b2803d7441c 100644
 --- a/method_deer.py
 +++ b/method_deer.py
 @@ -91,34 +91,50 @@ def calcu_max_probs_w_kv(model, pred_input_ids, kv_cache, tokenizer, method=0, t
@@ -304,7 +304,7 @@ index 15c7945f7aada5600ccbb957b0c8f8dad966e070..2c9005687eb601119b342f02aca67f73
              tokenizer("\n**Final Answer**\nThe final code is:\n```python\n", add_special_tokens=False)["input_ids"]
 -        ).unsqueeze(0).to(model.device)
 -        final_answer_ids = tokenizer("</think>\n**Final Answer**\nThe final code is:\n```python\n", add_special_tokens=False)["input_ids"]
-+        ).unsqueeze(0).to(model.device)     # 文字前缀+编码为token id列表，再通过torch.tensor转换为一维张量;.unsqueeze(0)在最前增加一个维度，得到（1，4）的二维张量；最后把张量移到模型使用的设备上
++        ).unsqueeze(0).to(model.device)     # 文字前缀+编码为token id列表，再通过torch.tensor转换为一维张量;.unsqueeze(0)在最前增加一个维度，得到（1，L）的二维张量；最后把张量移到模型使用的设备上
 +        
 +        # 真正提前停止时用的前缀：先结束思考，再引导写代码。
 +        # 此处保存为 ID 列表，方便后面与其他 ID 列表拼接。
@@ -368,7 +368,7 @@ index fbfaad8a3bb7176e1c5c1b7117f9c74910fa3dec..3cf8df0c371e414ffb167aa61f55137d
  
  
 diff --git a/models.py b/models.py
-index 41571f11374205de5b27d0765e5dc1bfeb8c0db2..16b52f01177b593403600bffe7c7cb66be1373bd 100644
+index 41571f11374205de5b27d0765e5dc1bfeb8c0db2..1d9cd3cdfa188a0f922309e8f3ff6087f9406107 100644
 --- a/models.py
 +++ b/models.py
 @@ -110,32 +110,59 @@ def get_model_and_tokenizer(
@@ -408,7 +408,7 @@ index 41571f11374205de5b27d0765e5dc1bfeb8c0db2..16b52f01177b593403600bffe7c7cb66
 +    下面的代码是对上面inputs的替代方案，使用apply_chat_template直接返回张量格式
 +    inputs = tokenizer.apply_chat_template(
 +        messages,
-+        tokenize=False,
++        tokenize=True,
 +        add_generation_prompt=True,
 +        return_tensors="pt",
 +        padding=True,

@@ -7,7 +7,7 @@
     "method_prompts.py",
     "models.py"
   ],
-  "patch_sha256": "03426bd4a43da05e45dfe5e4422df936abd6535a550574ffbc9d28d4fbcf88c3",
+  "patch_sha256": "534d1701eb5e7683072628f6f53d33e9f6d5aa01e1dda6a6021b22451b2f426c",
   "scope": "source_edits_snapshot_not_validation_or_experiment_evidence",
   "includes": "tracked files only; both staged and unstaged edits"
 }
