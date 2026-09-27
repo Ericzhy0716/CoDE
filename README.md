@@ -20,6 +20,7 @@ codestop-reproduction/
 
 **现有资料**
 
+- [每天同步 GitHub](docs/DAILY_GITHUB_SYNC.md)：选择修改、导出上游阅读注释、检查差异、提交上传；配套 `scripts/daily_sync.py`，无需 GPU。
 - [2026-09-27 教学实验归档](results/teaching/2026-09-27/README.md)：两次真实普通生成的完整小文件记录、token 序列、配置、环境和对比结果，已核验记录哈希。
 - [模型下载排错记录](docs/DOWNLOAD_TROUBLESHOOTING_20260927.md)：固定模型版本、镜像续传、NLTK 资源准备与文件完整性校验。
 - [D1源码导读与练习](docs/D1_CODE_WALKTHROUGH.md)：在Mac上按题目、消息、token、生成、判分、保存的顺序精读；附实际行号、只读命令和笔记清单。
