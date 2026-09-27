@@ -20,9 +20,11 @@ codestop-reproduction/
 
 **现有资料**
 
+- [2026-09-27 教学实验归档](results/teaching/2026-09-27/README.md)：两次真实普通生成的完整小文件记录、token 序列、配置、环境和对比结果，已核验记录哈希。
+- [模型下载排错记录](docs/DOWNLOAD_TROUBLESHOOTING_20260927.md)：固定模型版本、镜像续传、NLTK 资源准备与文件完整性校验。
 - [D1源码导读与练习](docs/D1_CODE_WALKTHROUGH.md)：在Mac上按题目、消息、token、生成、判分、保存的顺序精读；附实际行号、只读命令和笔记清单。
-- [单题执行指南](docs/SINGLE_QUESTION_RUNBOOK.md)：本地查看配置，服务器准备与检查，再逐阶段生成、补答、DEER/CoDE和教学判分；新增入口尚待真实GPU验收。
-- [新对话交接文档](docs/REPRODUCTION_HANDOFF.md)：可单独上传，包含当前状态、十阶段计划、账号分工、Notion任务表与顺延方案、已知问题及接手后的第一步；Notion连接已于2026-09-21核验，任务数据库尚未建立或迁移。
+- [单题执行指南](docs/SINGLE_QUESTION_RUNBOOK.md)：本地查看配置，服务器准备与检查，再逐阶段生成、补答、DEER/CoDE和教学判分；base 已有真实 GPU 记录，其余阶段仍待执行。
+- [新对话交接文档](docs/REPRODUCTION_HANDOFF.md)：包含十阶段计划、账号分工、Notion接入和顺延方案；其中旧日期状态以最新 Notion 日计划和实验归档为准。
 - [新手复现计划](docs/REPRODUCTION_PLAN.md)：每天6–8小时、10个任务阶段与弹性顺延规则；从单题理解到单模型完整基准。
 - [复现进度与每日汇报](docs/REPRODUCTION_PROGRESS.md)：当前阶段、已完成证据、下一次任务和调整记录；根据每日实际进度更新。
 - [实验优先级与最小证据](docs/EXPERIMENT_PRIORITIES_20260921.md)：当前必做、支持创新结论时再做、可推迟项目；先独立开发诊断，再决定完整复现和扩展。
@@ -36,7 +38,7 @@ codestop-reproduction/
 
 **当前状态**
 
-已建立独立目录，收纳复现要求、创新可行性、费用与API方案说明和官方代码参考副本。现有 `scripts/single_question.py`、`configs/single_question.json` 和 `src/` 单题诊断封装，可分阶段保存、恢复和独立教学判分。尚未在此目录启动GPU实验，也没有将官方代码/论文差异处理完毕；本地工程检查不等于真实模型验证。当前目标为COLING2027冲刺：先完成单题闭环及有限价值诊断，再按证据决定扩大范围。
+2026-09-27，用户已完成服务器环境检查，并在 Qwen3-4B BF16 上执行两次同种子的普通生成教学样例。两次均生成 2048 token，文本与 token 序列完全一致；达到长度上限时仍未生成 `</think>` 或 EOS，教学判分保留 `needs_review`。配置、原始生成记录与环境见上述归档。Vanilla 补答、DEER、CoDE 和正式基准尚未运行，官方代码/论文差异仍按既有文档处理。当前目标为COLING2027冲刺：先完成单题闭环及有限价值诊断，再按证据决定扩大范围。
 
 每次正式实验需保存代码版本、配置、模型和数据版本、样本划分、随机种子、判分方式及完整性核验；论文报告的token成本与实测运行时间分别记录。官方代码原样运行、论文公式对齐版本和新方法实验需分开标记。
 

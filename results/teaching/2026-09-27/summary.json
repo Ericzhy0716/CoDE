@@ -1,0 +1,88 @@
+{
+  "scope": "teaching_only_not_paper_evaluation",
+  "sample": {
+    "id": "teaching-001",
+    "question": "Compute 37 * 43 - 29 * 41.",
+    "answer": "402",
+    "purpose": "handwritten_diagnostic_not_benchmark"
+  },
+  "config": {
+    "scope": "single_question_diagnostic_only",
+    "sample": {
+      "id": "teaching-001",
+      "question": "Compute 37 * 43 - 29 * 41.",
+      "answer": "402",
+      "purpose": "handwritten_diagnostic_not_benchmark"
+    },
+    "model_id": "Qwen/Qwen3-4B",
+    "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+    "max_new_tokens": 2048,
+    "seed": 42,
+    "deer_threshold": 0.95,
+    "conf_threshold": 0.95,
+    "degen_threshold": 2.0,
+    "ramp_steps": 2,
+    "ramp_min": 0.9,
+    "stop_word": "Wait",
+    "ewt": true,
+    "cp_cache": false,
+    "use_log": true,
+    "rollback": false
+  },
+  "runs": {
+    "first": {
+      "input_tokens": 40,
+      "generated_tokens": 2048,
+      "max_new_tokens": 2048,
+      "has_thinking_end": false,
+      "ends_with_eos": false,
+      "metrics": {
+        "elapsed_seconds": 78.45025874697603,
+        "peak_cuda_allocated_bytes": 8454142976,
+        "peak_cuda_reserved_bytes": 8646557696,
+        "seed": 42,
+        "device": "cuda:0",
+        "dtype": "bfloat16",
+        "timing_scope": "base",
+        "includes_diagnostic_logging": true,
+        "is_online_early_stop_latency": false,
+        "model_id": "Qwen/Qwen3-4B",
+        "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c"
+      },
+      "grading": {
+        "source_sha256": "cd11e6273ecd76600d06c2b3fb3737de5a235261c57c7cc42f9f09c5b518f08a",
+        "status": "needs_review",
+        "correct": null,
+        "reason": "missing_thinking_end"
+      }
+    },
+    "repeat": {
+      "input_tokens": 40,
+      "generated_tokens": 2048,
+      "max_new_tokens": 2048,
+      "has_thinking_end": false,
+      "ends_with_eos": false,
+      "metrics": {
+        "elapsed_seconds": 79.28048356098589,
+        "peak_cuda_allocated_bytes": 8454142976,
+        "peak_cuda_reserved_bytes": 8646557696,
+        "seed": 42,
+        "device": "cuda:0",
+        "dtype": "bfloat16",
+        "timing_scope": "base",
+        "includes_diagnostic_logging": true,
+        "is_online_early_stop_latency": false,
+        "model_id": "Qwen/Qwen3-4B",
+        "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c"
+      },
+      "grading": {
+        "source_sha256": "34b5d874e49c6252f9489e97104f66d86b083df7a40885b9c66e13f92a44676c",
+        "status": "needs_review",
+        "correct": null,
+        "reason": "missing_thinking_end"
+      }
+    }
+  },
+  "same_generated_token_ids": true,
+  "same_response_text": true
+}

@@ -1,0 +1,16 @@
+
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]
+Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 77.40it/s]
+base: completed
+{
+  "scope": "teaching_only_not_paper_evaluation",
+  "fingerprint": "0b3881d984d1ce50972436acd38df47807ebf542dae49832906ae1517f9e23ba",
+  "stages": {
+    "base": {
+      "source_sha256": "cd11e6273ecd76600d06c2b3fb3737de5a235261c57c7cc42f9f09c5b518f08a",
+      "status": "needs_review",
+      "correct": null,
+      "reason": "missing_thinking_end"
+    }
+  }
+}

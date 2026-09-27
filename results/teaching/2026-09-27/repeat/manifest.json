@@ -1,0 +1,46 @@
+{
+  "created_at": "2026-09-27T10:09:16.103080+00:00",
+  "fingerprint": "0b3881d984d1ce50972436acd38df47807ebf542dae49832906ae1517f9e23ba",
+  "identity": {
+    "config": {
+      "scope": "single_question_diagnostic_only",
+      "sample": {
+        "id": "teaching-001",
+        "question": "Compute 37 * 43 - 29 * 41.",
+        "answer": "402",
+        "purpose": "handwritten_diagnostic_not_benchmark"
+      },
+      "model_id": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "max_new_tokens": 2048,
+      "seed": 42,
+      "deer_threshold": 0.95,
+      "conf_threshold": 0.95,
+      "degen_threshold": 2.0,
+      "ramp_steps": 2,
+      "ramp_min": 0.9,
+      "stop_word": "Wait",
+      "ewt": true,
+      "cp_cache": false,
+      "use_log": true,
+      "rollback": false
+    },
+    "sources": {
+      "upstream_commit": "b5081e7c2abe23bb1d19649421cc13522fee7c50",
+      "upstream_sha256": {
+        "models.py": "0db56d78541ccc913410f07c5d96466dcf05e4840bafc0d0d9e7aabe79ad90e5",
+        "method_prompts.py": "e94de1253160725c2e277a80ec8f4909879bad76c40d3d1a5783e297ccbf4d13",
+        "method_deer.py": "340da5ad17b1be4e97e299ec37e84c711d6ada13fa6b28c018e48d4561a08145",
+        "method_codestop.py": "d020fde481bf1ad2d4ee53ea43a3ae31560e05be1d6cf6f172489b54179cb1ff",
+        "cache_utils.py": "e4bcea4a8c9bb5f76a4e2cacf7070c4c302de4272645d974e1de008636f73d04",
+        "inference.py": "65b23de0ffab41b1de26d27c2907a8129d30d72aef88faf5a1847a110f372ee1"
+      },
+      "runner_sha256": {
+        "src/diagnostic_core.py": "b277ed00fcb76baa62f5b796835374849e04193dbd51db27067cc3c6e48ab2d3",
+        "src/upstream_diagnostic.py": "ef4ff6465802eb808885c9d5720d189b8cfbec7d2dbba40905982a674e190005",
+        "scripts/single_question.py": "407c5fa92509c2ea175a9af168966b1c8ee20937a7e1b027df375d4f432418f0"
+      }
+    },
+    "schema_version": 1
+  }
+}

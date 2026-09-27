@@ -1,0 +1,66 @@
+{
+  "exported_at": "2026-09-27T10:31:13.212048+00:00",
+  "scope": "reviewed teaching records; no weights or credentials",
+  "files": {
+    "first/base.json": {
+      "source_sha256": "cd11e6273ecd76600d06c2b3fb3737de5a235261c57c7cc42f9f09c5b518f08a",
+      "export_sha256": "cd11e6273ecd76600d06c2b3fb3737de5a235261c57c7cc42f9f09c5b518f08a",
+      "transformation": "unchanged after review"
+    },
+    "first/manifest.json": {
+      "source_sha256": "1afcda3816720423ab7639b616cd9f8ef77e3d36da544ab073ea2f62be912723",
+      "export_sha256": "1afcda3816720423ab7639b616cd9f8ef77e3d36da544ab073ea2f62be912723",
+      "transformation": "unchanged after review"
+    },
+    "first/environment.json": {
+      "source_sha256": "7847430d15650007707b33cf5797e0d04868f3bb09b44dd4f83d92caa75de207",
+      "export_sha256": "7c1e22a42ec65b3a304679c1559b0bd18c38a6ec57af779e3b972356887e992c",
+      "transformation": "model.snapshot normalized to repo-relative path"
+    },
+    "first/grading.json": {
+      "source_sha256": "63c1f209c8c6d568ffed862101865a80a6bf17ca3d3896f6ccd4e97404fabfa0",
+      "export_sha256": "63c1f209c8c6d568ffed862101865a80a6bf17ca3d3896f6ccd4e97404fabfa0",
+      "transformation": "unchanged after review"
+    },
+    "first/events.jsonl": {
+      "source_sha256": "cf3dd6bc0cc8fde49a9b1f1eea853d86549d88ea98a1e19618a5e4875e074ea9",
+      "export_sha256": "cf3dd6bc0cc8fde49a9b1f1eea853d86549d88ea98a1e19618a5e4875e074ea9",
+      "transformation": "unchanged after review"
+    },
+    "first/console.log": {
+      "source_sha256": "9abd062da1b0a0846aa11ebaee9286ffe1eb3ebb26f221db09e0f6deb0614075",
+      "export_sha256": "9abd062da1b0a0846aa11ebaee9286ffe1eb3ebb26f221db09e0f6deb0614075",
+      "transformation": "unchanged after review"
+    },
+    "repeat/base.json": {
+      "source_sha256": "34b5d874e49c6252f9489e97104f66d86b083df7a40885b9c66e13f92a44676c",
+      "export_sha256": "34b5d874e49c6252f9489e97104f66d86b083df7a40885b9c66e13f92a44676c",
+      "transformation": "unchanged after review"
+    },
+    "repeat/manifest.json": {
+      "source_sha256": "c0f12d7d0b2a2e0822d637eceaabe8eee8d8f1b189fc3cc52cd7ff950ec81861",
+      "export_sha256": "c0f12d7d0b2a2e0822d637eceaabe8eee8d8f1b189fc3cc52cd7ff950ec81861",
+      "transformation": "unchanged after review"
+    },
+    "repeat/environment.json": {
+      "source_sha256": "007afa9d8681d22ec1a97e2e359c8abbaf44d04bf97888d96f80a1247431bac6",
+      "export_sha256": "62d74e9824a0afd2673c420b7363d494bfffda6c99859abb391a7b9bd0fd7bc0",
+      "transformation": "model.snapshot normalized to repo-relative path"
+    },
+    "repeat/grading.json": {
+      "source_sha256": "7f3345848de41884e8a16ed632da0e9fc02236810bd67b8142aa23257695c565",
+      "export_sha256": "7f3345848de41884e8a16ed632da0e9fc02236810bd67b8142aa23257695c565",
+      "transformation": "unchanged after review"
+    },
+    "repeat/events.jsonl": {
+      "source_sha256": "f327dc38f5517c98f8bd3ca93705fa1155fabb3ce3c6113f715e931550a2d2c7",
+      "export_sha256": "f327dc38f5517c98f8bd3ca93705fa1155fabb3ce3c6113f715e931550a2d2c7",
+      "transformation": "unchanged after review"
+    },
+    "repeat/console.log": {
+      "source_sha256": "a2c066046b6a26584dde8162511c9c6f2b4523bb1d41a7733397ca03109b33ab",
+      "export_sha256": "a2c066046b6a26584dde8162511c9c6f2b4523bb1d41a7733397ca03109b33ab",
+      "transformation": "unchanged after review"
+    }
+  }
+}
