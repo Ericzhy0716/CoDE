@@ -1,0 +1,13 @@
+{
+  "upstream_path": "upstream/CoDE-Stop",
+  "base_commit": "b5081e7c2abe23bb1d19649421cc13522fee7c50",
+  "changed_files": [
+    "inference.py",
+    "method_deer.py",
+    "method_prompts.py",
+    "models.py"
+  ],
+  "patch_sha256": "ccddcfdccd56fb14d3a918b47ed705d4e2ea5ee09de4638995f3f332b6ae9cf7",
+  "scope": "source_edits_snapshot_not_validation_or_experiment_evidence",
+  "includes": "tracked files only; both staged and unstaged edits"
+}
