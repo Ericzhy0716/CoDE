@@ -259,32 +259,45 @@ def load_manifest(run_dir):
         raise ValueError("Manifest identity checksum mismatch.")
     return manifest
 
-
+# 用于教学诊断的严格判分函数
 def grade_response(response, expected):
     """Strict integer/decimal/fraction teaching checker, deliberately not a benchmark judge."""
     # With Qwen thinking enabled, no closing tag means a final answer is unconfirmed.
-    if "</think>" not in response:
+    
+    # 必须先看到思考结束标记
+    if "</think>" not in response:  # 如果没有结束完思考就被截断，函数就不尝试判断对错，而是返回“needs_review”
         return {"status": "needs_review", "correct": None, "reason": "missing_thinking_end"}
-    tail = response.rsplit("</think>", 1)[1]
-    start = tail.rfind("\\boxed{")
+    
+    # 只检查最后一个 </think> 后面的内容
+    tail = response.rsplit("</think>", 1)[1]    # rsplit("分隔符",1)表示从右侧开始，最多分割一次。取[1]后，返回最后一个</think>之后的正式答案
+    
+    # 找最后一个\boxed{
+    start = tail.rfind("\\boxed{")  # rfind:从右边开始寻找
     if start < 0:
         return {"status": "needs_review", "correct": None, "reason": "missing_boxed_answer"}
-    content, depth = [], 1
-    for char in tail[start + 7:]:
+    
+    # 提取{}中的内容
+    content, depth = [], 1  # content赋值为[],depth赋值为1
+    for char in tail[start + 7:]:   # "\\boxed{" 在实际字符串中的长度是 7，所以 start + 7 正好跳过 \boxed{，从盒子内部第一个字符开始遍历
         depth += (char == "{") - (char == "}")
         if depth == 0:
             break
         content.append(char)
+        
+    # 如果一直读到末尾，depth 仍不为 0，说明盒子没有闭合：
     if depth != 0:
         return {"status": "needs_review", "correct": None, "reason": "unfinished_box"}
-    predicted = "".join(content).strip()
-    # Do not evaluate arbitrary Python/SymPy expressions supplied by a model.
-    number = r"[+-]?(?:\d+(?:\.\d+)?|\d+/[+-]?\d+)"
-    if not re.fullmatch(number, predicted) or not re.fullmatch(number, expected.strip()):
+    # 然后合并字符、去除前后空白
+    predicted = "".join(content).strip()    # "".join(content):把 content 列表里的所有字符串连接起来，中间不加任何东西(因为是“”，相当于用空字符串作连接符)；.strip()表示去掉字符串开头和结尾的空白字符、换行符、制表符等
+    
+    # 限定允许判分的答案格式
+    number = r"[+-]?(?:\d+(?:\.\d+)?|\d+/[+-]?\d+)" # 匹配一个可带正负号的数字，这个数字可以是整数、小数，或者分数
+    if not re.fullmatch(number, predicted) or not re.fullmatch(number, expected.strip()):   # re.fullmatch() 要求整个字符串都符合格式，而不只是其中一部分；分别检查predicted和expected是否符合number格式
         return {"status": "needs_review", "correct": None, "reason": "unsupported_expression", "answer": predicted}
+    # 用 Fraction 精确比较数值，Fraction可以把字符串转为精确的有理数
     try:
         equal = Fraction(predicted) == Fraction(expected.strip())
-    except (ValueError, ZeroDivisionError):
+    except (ValueError, ZeroDivisionError): # 如果发生值不合法或者除以0
         return {"status": "needs_review", "correct": None, "reason": "invalid_numeric_answer", "answer": predicted}
     return {"status": "checked", "correct": equal, "answer": predicted}
 
